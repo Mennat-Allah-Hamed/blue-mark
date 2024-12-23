@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add to cart</title>
+    <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet"></link>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+  text-decoration: none;
+  background-color: #fff;
+}
+.product-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.product-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.product-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.product-pricing {
+  margin-bottom: 20px;
+}
+
+.price-discount {
+  display: flex;
+  align-items: center;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.discount-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.discount-text {
+  font-size: 16px;
+}
+
+.price-details {
+  font-size: 18px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.new-price {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.price-note {
+  font-size: 12px;
+  color: #999;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.status-icon {
+  margin-right: 5px;
+}
+
+.installments {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.installments img {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.quantity-control {
+  margin-bottom: 20px;
+}
+
+.quantity-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-buttons button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-buttons input {
+  width: 50px;
+  text-align: center;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-to-cart, .buy-now {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-to-cart {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.buy-now {
+  background-color: #6200ea;
+  color: #fff;
+}
+
+.product-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+<body>
+    <section class="product-section">
+        <div class="container">
+          <div class="product-right">
+            <img src="image/ser1.jpg" alt="Product Image">
+          </div>
+          <div class="product-left">
+            <h2 class="product-title">متجر الإلكتروني - للشركات والمنشآت</h2>
+            <h3 class="product-subtitle">الباقة الإحترافية للشركات والمنشآت</h3>
+            <div class="product-pricing">
+              <div class="price-discount">
+                <span class="discount-icon">🔥</span>
+                <span class="discount-text">وفر 34500.00 ر.س</span>
+              </div>
+              <div class="price-details">
+                <span class="old-price">SAR 74,750</span>
+                <span class="new-price">SAR 40,250</span>
+              </div>
+              <p class="price-note">السعر شامل الضريبة</p>
+            </div>
+            <div class="availability">
+              <span class="status-icon">✔</span>
+              <span class="status-text">مُتوفر</span>
+            </div>
+            <div class="installments">
+              <img src="image/Tabby.png" alt="Tabby Logo">
+              <span>
+                4 دفعات بلا فوائد بقيمة SAR 10,062.50 بدون رسوم.
+                <a href="#">لمعرفة المزيد</a>
+              </span>
+            </div>
+            <div class="quantity-control">
+              <label for="quantity">الكمية</label>
+              <div class="quantity-buttons">
+                <button class="decrease-btn">-</button>
+                <input type="number" id="quantity" value="1" min="1">
+                <button class="increase-btn">+</button>
+              </div>
+            </div>
+            <div class="action-buttons">
+              <button class="add-to-cart">إضافة للسلة</button>
+              <button class="buy-now">اشترِ الآن</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+</body>
+</html>
