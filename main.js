@@ -54,33 +54,28 @@ function typeWelcome() {
 
 typeWelcome();
 
-// تحديد العناصر المطلوبة
 const container = document.querySelector('.container-op');
 const servicesContainer = document.querySelector('.services-container');
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 
-// التأكد من أن العناصر موجودة
 if (container && servicesContainer && leftArrow && rightArrow) {
-  // التعامل مع السهم الأيسر
   leftArrow.addEventListener('click', () => {
-    container.scrollLeft += 300; // تحريك المحتوى لليسار
+    container.scrollLeft += 220; 
   });
 
-  // التعامل مع السهم الأيمن
   rightArrow.addEventListener('click', () => {
-    container.scrollLeft -= 300; // تحريك المحتوى لليمين
+    container.scrollLeft -= 220; 
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // تسهيل إضافة وظائف للأسهم في كل قسم
   function setupScroll(containerId, leftArrowId, rightArrowId) {
       const container = document.getElementById(containerId);
       const leftArrow = document.getElementById(leftArrowId);
       const rightArrow = document.getElementById(rightArrowId);
 
-      const scrollAmount = 300; // مسافة التمرير
+      const scrollAmount = 220; // 
 
       rightArrow.addEventListener("click", () => {
           container.scrollLeft -= scrollAmount;
@@ -91,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // استدعاء الوظيفة لكل قسم
   setupScroll("marketing-container", "marketing-left", "marketing-right");
   setupScroll("other-container", "other-left", "other-right");
 });
@@ -140,3 +134,20 @@ window.onload = function () {
     });
   };
   
+
+  const scrollToTopButton = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollToTopButton.classList.add("show");
+  } else {
+    scrollToTopButton.classList.remove("show");
+  }
+});
+
+scrollToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" 
+  });
+});
