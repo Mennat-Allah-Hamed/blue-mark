@@ -11,7 +11,6 @@
   text-decoration: none;
   scroll-behavior: smooth;
 }
-
 .head {
   width: 100%;
   height: 100vh;
@@ -23,7 +22,6 @@
   align-items: center;
   position: relative;
 }
-
 .menu {
   position: relative;
   display: flex;
@@ -42,9 +40,10 @@
 }
 
 .fixed-men.scrolled {
-  background: rgb(0 0 0/var(--tw-bg-opacity,1));
+  background: linear-gradient(90deg, #2cc7ff, #002147);
   box-shadow: 0 0 5px rgba(58, 58, 58, 0.1);
   padding: 0;
+  
 }
 
 .rt{
@@ -110,12 +109,12 @@
 }
 .side-menu {
   position: fixed;
-  width: 340px;
-  height: 80vh;
-  padding: 20px;
+  width: 360px;
+  height: 100vh;
+  padding: 10px;
   background: linear-gradient(90deg, #01359c 48%, #001c53);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-  transform: translateY(-120%); /* إخفاء القائمة */
+  transform: translateY(-160%); 
   transition: transform 0.5s ease-out;
   z-index: 999;
   border-radius: 10px;
@@ -129,7 +128,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 10px;
   width: 100%;
 }
 .side-menu ul{
@@ -140,7 +139,7 @@
   align-self: flex-start; 
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
@@ -162,15 +161,14 @@
   right: 27px;
 }
 
-
 .side-menu ul {
 list-style: none;
 width: 100%;
-margin-top: 20px;
+margin-top: 10px;
 }
 
 .side-menu ul li:not(:last-child) {
-margin-bottom: 5px;
+margin-bottom: 7px;
 border-bottom: 1px solid rgba(255, 255, 255, .17);}
 
 .side-menu ul li a {
@@ -190,7 +188,7 @@ padding-top: 30px;
 .side-menu ul li:not(:last-child)::after {
   content: "";
   display: block;
-  margin: 15px 0;
+  margin: 10px 0;
   width: 100%;
 }
 
@@ -382,6 +380,29 @@ padding-top: 30px;
   }
 
 }
+.scroll-button {
+  position: fixed;
+  bottom: 20px; 
+  left: 20px;
+  background: linear-gradient(90deg, #01359c 48%, #001c53);
+  color: #fff; 
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0; 
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-button.show {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 .latest-products{
@@ -510,10 +531,19 @@ padding-top: 30px;
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0;
   }
-
+  .sp {
+    width: 12px;
+    height: 12px;
+    margin: 10px auto;
+  }
+  
+  .sp::after,
+  .sp::before {
+    width: 100px;
+  }
   .projects img {
     width: 120px;
     height: 120px;
@@ -725,8 +755,8 @@ a.op-card-link:hover .choose-to-cart button{
   left: 50%;
 }
 a.op-card-link {
-  width: 300px; /* تحديد عرض البطاقة */
-  flex-shrink: 0; /* منع تقليص حجم البطاقات */
+  width: 300px;
+  flex-shrink: 0;
 }
 a.op-card-link:first-child {
   margin-right: 270px;
@@ -740,13 +770,12 @@ a.op-card-link:hover .op-card {
 }
 
 .op-card {
-  height: 380px;
   width: 300px;
-  flex: 0 0 auto;
-  flex-shrink: 0; /* منع تقليص حجم البطاقات */
+  height: 410px;
+  flex-shrink: 0; 
   border: 3px solid #042ba4;
   border-radius: 10px;
-    box-shadow: #406ea6d9 4px 3px 0 1px, #ffffff80 -3px -3px 6px 1px inset;
+  box-shadow: #406ea6d9 4px 3px 0 1px, #ffffff80 -3px -3px 6px 1px inset;
   background: #fff;
   text-align: center;
   overflow: hidden;
@@ -793,7 +822,7 @@ a.op-card-link:hover .op-card {
 .op-icons,
 .add-to-cart {
   position: absolute;
-  top: 213px;
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0; 
@@ -801,13 +830,13 @@ a.op-card-link:hover .op-card {
   z-index: 2;
 }
 .add-to-cart{
-  width: 109%;
-  padding: 20px;
+  width: 100%;
+  padding-bottom: 100px;
 }
 
 .op-icons {
   display: flex;
-  top: 186px;
+  top: 150px;
   gap: 10px;
   bottom: 50px;
 }
@@ -829,14 +858,14 @@ a.op-card-link:hover .op-card {
 }
 .add-to-cart button {
   background: rgba(0, 0, 0, 0);
-    color: #fff;
-    border: 0;
-    font-size: 16px;
-    width: 100%;
-    padding: 7px 0;
-    background-color: #425884;
-    font-weight: 600;
-    transition: 0.3s;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  width: 100%;
+  padding: 7px 0;
+  background-color: #425884;
+  font-weight: 600;
+  transition: 0.3s;
 }
 .add-to-cart button .logo-add{
   margin: 0 5px;
@@ -873,11 +902,11 @@ a.op-card-link:hover .op-card {
     margin-right: 620px;
   }
   .container-op {
-    gap: 10px; /* تقليل المسافات بين البطاقات */
+    gap: 10px;
   }
 
   .op-card {
-    max-width: 260px; /* تقليل عرض البطاقة */
+    max-width: 260px;
   }
 }
 
@@ -903,8 +932,36 @@ a.op-card-link:hover .op-card {
 }
 
 @media (max-width: 480px) {
-  a.op-card-link:first-child {
-    margin-right: 1220px;
+  .text-choose{
+    font-size: 18px;
+  }
+  .logo-add i{
+    font-size: 16px;
+  }
+  .op-icons {
+    top: 103px;
+    gap: 7px;
+}
+  .add-to-cart{
+    top: 143px
+  }
+  .new-price , .discount{
+    font-size: 0.85rem;
+  }
+  .old-price {
+    font-size: 0.85rem;
+  }
+  .container-op {
+    gap: 0;
+  }
+
+  .op-card {
+    max-width: 220px;
+    height: 340px;
+  }
+
+  a.op-card-link{
+    margin: 0 -30px;
   }
   .op-footer h4 {
     font-size: 14px;
@@ -974,31 +1031,6 @@ a.op-card-link:hover .op-card {
     color: #fff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .section-title {
   width: 18%;
   font-size: 1.125rem;
@@ -1010,10 +1042,9 @@ a.op-card-link:hover .op-card {
 
 .services-container {
   display: flex;
-  gap: 20px; /* مسافة بين البطاقات */
-  overflow-x: auto; /* السماح بالتمرير الأفقي */
-  scroll-behavior: smooth; /* حركة سلسة أثناء التمرير */
-  padding: 10px; /* إضافة فراغ داخلي */
+  gap: 20px; 
+  overflow-x: auto; 
+  scroll-behavior: smooth; 
   overflow-x: auto;
   padding: 10px 0;
   scrollbar-width: none;
